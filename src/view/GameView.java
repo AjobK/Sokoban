@@ -97,6 +97,8 @@ public class GameView {
 		Image image;
 		ImageView imgBlock;
 		
+		System.out.println("Showing gamemap");
+		
 		for (int yC = 0; yC < height; yC++) {
 			for (int xC = 0; xC < width; xC++) {
 				switch(level[xC][yC]) {
@@ -234,8 +236,11 @@ public class GameView {
 								theWall = 7;
 								break;
 						}
-						
-						image = new Image("images/walls/" + theWall + ".png");
+						System.out.println(theWall);
+//						image = new Image("images/walls/" + theWall + ".png");
+						System.out.println("About to load " + theWall);
+						image = new Image("images/air.png");
+						System.out.println("Loaded " + theWall);
 						break;
 					case '+':
 						image = new Image("images/goal.png");
@@ -254,6 +259,8 @@ public class GameView {
 						break;
 				}
 				
+				System.out.println("Yay");
+				
 				imgBlock = new ImageView(image);
 				imgBlock.setX(xC * 32);
 				imgBlock.setY(yC * 32);
@@ -265,8 +272,10 @@ public class GameView {
 			if (players.size() > 1) {
 				if (players.get(0).getYPos() < players.get(1).getYPos()) {
 					// Player 1
-					image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
+//					image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
+					image = new Image("images/character0/down/0.png");
 
+					
 					imgBlock = new ImageView(image);
 					imgBlock.setX(players.get(0).getXPos() * 32 - 2);
 					imgBlock.setY(players.get(0).getYPos() * 32 - 16);
@@ -274,8 +283,9 @@ public class GameView {
 					root.getChildren().add(imgBlock);
 
 					// Player 2
-					image = new Image("images/character" + 1 + "/" + players.get(1).getDirection() + "/" + players.get(1).getWalkCount() + ".png");
-
+//					image = new Image("images/character" + 1 + "/" + players.get(1).getDirection() + "/" + players.get(1).getWalkCount() + ".png");
+					image = new Image("images/character0/down/0.png");
+					
 					imgBlock = new ImageView(image);
 					imgBlock.setX(players.get(1).getXPos() * 32 - 2);
 					imgBlock.setY(players.get(1).getYPos() * 32 - 16);
@@ -284,8 +294,9 @@ public class GameView {
 				} else if (players.get(0).getYPos() == players.get(1).getYPos()) {
 					if (players.get(0).getXPos() < players.get(1).getXPos()) {
 						// Player 1
-						image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
-
+//						image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
+						image = new Image("images/character0/down/0.png");
+						
 						imgBlock = new ImageView(image);
 						imgBlock.setX(players.get(0).getXPos() * 32 - 2);
 						imgBlock.setY(players.get(0).getYPos() * 32 - 16);
@@ -293,8 +304,9 @@ public class GameView {
 						root.getChildren().add(imgBlock);
 
 						// Player 2
-						image = new Image("images/character" + 1 + "/" + players.get(1).getDirection() + "/" + players.get(1).getWalkCount() + ".png");
-
+//						image = new Image("images/character" + 1 + "/" + players.get(1).getDirection() + "/" + players.get(1).getWalkCount() + ".png");
+						image = new Image("images/character0/down/0.png");
+						
 						imgBlock = new ImageView(image);
 						imgBlock.setX(players.get(1).getXPos() * 32 - 2);
 						imgBlock.setY(players.get(1).getYPos() * 32 - 16);
@@ -302,8 +314,9 @@ public class GameView {
 						root.getChildren().add(imgBlock);
 					} else {
 						// Player 2
-						image = new Image("images/character" + 1 + "/" + players.get(1).getDirection() + "/" + players.get(1).getWalkCount() + ".png");
-
+//						image = new Image("images/character" + 1 + "/" + players.get(1).getDirection() + "/" + players.get(1).getWalkCount() + ".png");
+						image = new Image("images/character0/down/0.png");
+						
 						imgBlock = new ImageView(image);
 						imgBlock.setX(players.get(1).getXPos() * 32 - 2);
 						imgBlock.setY(players.get(1).getYPos() * 32 - 16);
@@ -311,7 +324,8 @@ public class GameView {
 						root.getChildren().add(imgBlock);
 
 						// Player 1
-						image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
+//						image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
+						image = new Image("images/character0/down/0.png");
 
 						imgBlock = new ImageView(image);
 						imgBlock.setX(players.get(0).getXPos() * 32 - 2);
@@ -321,7 +335,8 @@ public class GameView {
 					}
 				} else {
 					// Player 2
-					image = new Image("images/character" + 1 + "/" + players.get(1).getDirection() + "/" + players.get(1).getWalkCount() + ".png");
+//					image = new Image("images/character" + 1 + "/" + players.get(1).getDirection() + "/" + players.get(1).getWalkCount() + ".png");
+					image = new Image("images/character0/down/0.png");
 
 					imgBlock = new ImageView(image);
 					imgBlock.setX(players.get(1).getXPos() * 32 - 2);
@@ -330,7 +345,8 @@ public class GameView {
 					root.getChildren().add(imgBlock);
 
 					// Player 1
-					image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
+//					image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
+					image = new Image("images/character0/down/0.png");
 
 					imgBlock = new ImageView(image);
 					imgBlock.setX(players.get(0).getXPos() * 32 - 2);
@@ -340,8 +356,9 @@ public class GameView {
 				}
 			} else {
 				// Player 1
-				image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
-
+//				image = new Image("images/character" + 0 + "/" + players.get(0).getDirection() + "/" + players.get(0).getWalkCount() + ".png");
+				image = new Image("images/character0/down/0.png");
+				
 				imgBlock = new ImageView(image);
 				imgBlock.setX(players.get(0).getXPos() * 32 - 2);
 				imgBlock.setY(players.get(0).getYPos() * 32 - 16);

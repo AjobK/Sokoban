@@ -1,6 +1,8 @@
 
 package sokoban;
 
+import java.util.Arrays;
+
 import controller.Controller;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -11,14 +13,14 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Sokoban extends Application {
-    
-    @Override
-    public void start(Stage primaryStage) {
-        Controller c = new Controller(primaryStage);
-    }
-    
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
+
+	@Override
+	public void start(Stage primaryStage) {
+		Controller c = new Controller(primaryStage);
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
 }

@@ -4,11 +4,11 @@ package model;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.util.Scanner;
 import javafx.scene.input.KeyCode;
 import model.Player;
-import model.Box;
+//import model.Box;
 
 public class GameField {
 	// Level data
@@ -51,17 +51,20 @@ public class GameField {
 	}
 	
 	public void setLevel(int levelNumber) {
+		System.out.println("Start of run");
 		// Export level
+		System.out.println("Did get into setlevel");
 		this.players.clear();
 		
 		this.levelNumber = levelNumber;
-				
+
 		try {
-			sc = new Scanner(new File("levels/level" + levelNumber + ".sok"));
+			File f = new File("levels/level1.sok");
+			sc = new Scanner(f);
 		} catch (FileNotFoundException e) {
-			System.out.println("File not found");
+			System.out.println("File not found 1");
 		}
-		
+
 		// x & y of array
 		x = 0;
 		y = 1;
@@ -70,6 +73,7 @@ public class GameField {
 		String tempString;
 		while (sc.hasNextLine()) {
 			tempString = sc.nextLine();
+			System.out.println(tempString);
 			if (x < tempString.length())
 				x = tempString.length();
 			y++;
@@ -81,9 +85,9 @@ public class GameField {
 		
 		// Reset Scanner
 		try {
-			sc = new Scanner(new File("levels/level" + levelNumber + ".sok"));
+			sc = new Scanner(new File("levels/level1.sok"));
 		} catch (FileNotFoundException e) {
-			System.out.println("File not found");
+			System.out.println("File not found 2");
 		}
 		
 		// Fill array
@@ -97,6 +101,7 @@ public class GameField {
 					players.add(new Player(xC, yC));
 			}
 		}
+		System.out.println("Flawless run");
 	}
 	
 	public int getLevelX() {
@@ -165,7 +170,7 @@ public class GameField {
 		if (key == cLeft) this.players.get(playerCount).setDirection("left");
 		if (key == cRight) this.players.get(playerCount).setDirection("right");
 		
-		char currentObject,nextObject, previousObject;
+		char currentObject, nextObject, previousObject;
 
 		// Direction check
 		if (key == cLeft || key == cUp) direction = -1;
