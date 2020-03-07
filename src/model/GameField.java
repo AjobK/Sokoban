@@ -23,7 +23,7 @@ public class GameField {
 	private Scanner sc;
 	
 	public GameField() {
-		this.setLevel(100);
+		this.setLevel(1);
 	}
 	
 	public char[][] getLevel() {
@@ -59,7 +59,7 @@ public class GameField {
 		this.levelNumber = levelNumber;
 
 		try {
-			File f = new File("levels/level1.sok");
+			File f = new File("levels/level" + levelNumber + ".sok");
 			sc = new Scanner(f);
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found 1");
@@ -85,7 +85,7 @@ public class GameField {
 		
 		// Reset Scanner
 		try {
-			sc = new Scanner(new File("levels/level1.sok"));
+			sc = new Scanner(new File("levels/level" + levelNumber + ".sok"));
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found 2");
 		}
